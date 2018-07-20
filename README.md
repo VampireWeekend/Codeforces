@@ -1,1 +1,1 @@
-# Codes for Competitions on [Codeforces](codeforces.com)
+# Codes for Competitions on [Codeforces](http://codeforces.com)
