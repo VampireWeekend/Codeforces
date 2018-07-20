@@ -1,0 +1,49 @@
+#include <cstdio>
+#include <iostream>
+#include <string.h>
+#include <string> 
+#include <map>
+#include <queue>
+#include <vector>
+#include <set>
+#include <algorithm>
+#include <math.h>
+#include <cmath>
+#include <stack>
+#define mem0(a) memset(a,0,sizeof(a))
+#define meminf(a) memset(a,0x3f,sizeof(a))
+using namespace std;
+typedef long long ll;
+typedef long double ld;
+typedef double db;
+const int maxn=105,inf=0x3f3f3f3f;  
+const ll llinf=0x3f3f3f3f3f3f3f3f;   
+const ld pi=acos(-1.0L);
+int a[maxn],b[maxn];
+bool f[maxn];
+
+int main() {
+	int n,m,i,j,k,sum=0;
+	scanf("%d%d",&n,&m);
+	for (i=1;i<=m;i++) {
+		scanf("%d%d",&a[i],&b[i]);
+	}
+	mem0(f);
+//	for (i=1;i<=100;i++) {
+		for (j=1;j<=100;j++) {
+			int flag=0;
+			for (k=1;k<=m;k++) {
+				if (a[k]>(b[k]-1)*j&&a[k]<=b[k]*j) continue;
+				flag=1;
+			}
+			if (!flag) {
+				f[(n-1)/j+1]=1;
+			} 
+		}
+//	}
+    int ans;
+    for (i=1;i<=100;i++) if (f[i]) sum++,ans=i;
+    if (sum==1) printf("%d",ans); else cout << -1;
+	return 0;
+}
+
